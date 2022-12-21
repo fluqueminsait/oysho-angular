@@ -1,0 +1,10 @@
+<div class="card">
+  <p class="card__p">{{ product.name }}</p>
+  <img
+    src="{{ product.image }}"
+    alt="foto"
+    (error)="errorImage($event)"
+    class="card__img"
+  />
+  <p>{{product.price}} € </p>
+</div>

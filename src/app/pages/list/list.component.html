@@ -1,0 +1,22 @@
+<div class="list-container">
+  <h2 class="list-container__productsTitle">PRODUCTOS: DE OYSHO</h2>
+  <input
+    type="text"
+    placeholder="Encuentra tu producto"
+    [(ngModel)]="inputSearch"
+    class="list-container__input"/>
+    <select id="select-sort" class="list-container__select" [ngModel]="optionSort" (ngModelChange)="sortList($event)">
+        <option value="" selected disabled hidden>Ordena de ...</option>
+        <option value="A-Z">La A a la Z</option>
+        <option value="Expensive">Mas caro a mas barato</option>
+        <option value="Cheap">Mas barato a mas caro</option>
+
+    </select>
+  <div class="list-container__productList">
+    <app-card
+      *ngFor="let product of productsList | filter : inputSearch"
+      [product]="product"
+      routerLink="/detail/{{ product.id }}"
+    ></app-card>
+  </div>
+</div>

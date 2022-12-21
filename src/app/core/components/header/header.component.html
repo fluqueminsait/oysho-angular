@@ -1,0 +1,25 @@
+<div class="header-container">
+  <div class="header-container__left">
+    <div class="navbar-container__left--sidebar">
+      <ng-template #content>
+          <ul class="navbar-container__left--sidebar-categories" *ngFor="let category of categories">
+            <li>{{category.name}}</li>
+              
+          </ul>
+      </ng-template>
+  </div>
+  <button class="btn btn-lg" (click)="open(content)" ><img src="../../../../assets/hamburger-icon.png"
+    alt="menu icono" width="30px" height="50px" /></button>
+    <img
+      src="../../../../assets/oysho-logo.png"
+      routerLink="/"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    />
+  </div>
+  <div class="header-container__center">
+    <p routerLink="/list" routerLinkActive="active">LISTA DE PRODUCTOS</p>
+  </div>
+</div>
+
+
